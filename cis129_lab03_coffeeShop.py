@@ -26,4 +26,3 @@ total_cost = calculate_total_cost(coffee_amount, muffin_amount)
 
 # Results
 print("\nTotal Cost: $", total_cost)
-
