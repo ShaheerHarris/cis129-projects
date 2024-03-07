@@ -1,6 +1,6 @@
 print("My Coffee and Muffin Shop")
 
-def calculate_total_cost(coffee_amount, muffin_amount, boba_amount, tea_amount):
+def calculate_total_cost(coffee_amount, muffin_amount, donut_amount, tea_amount):
     # Prices
     coffee_price = 5
     muffin_price = 4
@@ -22,11 +22,10 @@ def calculate_total_cost(coffee_amount, muffin_amount, boba_amount, tea_amount):
 # Order
 coffee_amount = int(input("Enter the number of coffees: "))
 muffin_amount = int(input("Enter the number of muffins: "))
-donuts_amount = int(input("Enter the number of donuts: "))
+donut_amount = int(input("Enter the number of donuts: "))
 tea_amount = int(input("Enter the number of teas: "))
 # Total cost 
 total_cost = calculate_total_cost(coffee_amount, muffin_amount, donut_amount, tea_amount)
 
 # Results
 print("\nTotal Cost: $", total_cost, "\n\nThank you for shopping with us!")
-
