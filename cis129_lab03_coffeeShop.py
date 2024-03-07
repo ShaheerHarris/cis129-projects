@@ -25,7 +25,7 @@ muffin_amount = int(input("Enter the number of muffins: "))
 donuts_amount = int(input("Enter the number of donuts: "))
 tea_amount = int(input("Enter the number of teas: "))
 # Total cost 
-total_cost = calculate_total_cost(coffee_amount, muffin_amount, donut_amount, tea_price)
+total_cost = calculate_total_cost(coffee_amount, muffin_amount, donut_amount, tea_amount)
 
 # Results
 print("\nTotal Cost: $", total_cost, "\n\nThank you for shopping with us!")
