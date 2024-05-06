@@ -1,0 +1,55 @@
+# Constants
+SEAT_PRICES = {'A': 20, 'B': 15, 'C': 10}
+SEAT_COUNTS = {'A': 300, 'B': 500, 'C': 200}
+
+# validating user input is within a range
+def validate_input(min_val, max_val, actual_val):
+    try:
+        actual_val = int(actual_val)
+        if min_val <= actual_val <= max_val:
+            return True
+        else:
+            print('Invalid input. Enter a number between', min_val, 'and', max_val)
+            return False
+    except ValueError:
+        print('Invalid input. Please enter a valid number.')
+        return False
+
+# Main function
+def main():
+    print("Welcome to the Theater Ticket Sales Program!")
+    print("Section Prices:")
+    for section, price in SEAT_PRICES.items():
+        print(f"Section {section}: ${price}")
+    print("Number of Seats:")
+    for section, count in SEAT_COUNTS.items():
+        print(f"Section {section}: {count} seats")
+    print()
+
+    # Selling tickets
+    sold_tickets = {}
+    for section, count in SEAT_COUNTS.items():
+        valid = False
+        while not valid:
+            section_seats = input(f'Enter number of tickets in Section {section}: ')
+            valid = validate_input(0, count, section_seats)
+            if valid:
+                sold_tickets[section] = int(section_seats)
+                count -= sold_tickets[section]
+                print(f"Subtotal for Section {section}: ${sold_tickets[section] * SEAT_PRICES[section]}")
+                print(f"Remaining seats in Section {section}: {count}")
+                print()
+
+    # Calculate total income
+    overall_total = 0
+    for section, count in sold_tickets.items():
+        overall_total += count * SEAT_PRICES[section]
+
+    # Displaying total income and sections
+    print("\nOverall Total Income: ${}".format(overall_total))
+    print("Number of Seats Sold:")
+    for section, count in sold_tickets.items():
+        print("Section {}: {} seats, Subtotal: ${}".format(section, count, count * SEAT_PRICES[section]))
+
+if __name__ == "__main__":
+    main()
