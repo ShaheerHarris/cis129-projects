@@ -1,0 +1,37 @@
+class Pet:
+    def __init__(self):
+        self.name = ''
+        self.type = ''
+        self.age = 0
+
+    def setName(self, name):
+        self.name = name
+
+    def setType(self, type):
+        self.type = type
+
+    def setAge(self, age):
+        self.age = age
+
+    def getName(self):
+        return self.name
+
+    def getType(self):
+        return self.type
+
+    def getAge(self):
+        return self.age
+
+
+animal = Pet()
+name = input('Enter the name of the pet: ')
+t = input('Enter the type of animal: ')
+age = int(input('Enter the age of the pet: '))
+
+animal.setName(name)
+animal.setType(t)
+animal.setAge(age)
+
+print('Pet name: ' + animal.getName())
+print('Animal type: ' + animal.getType())
+print('Age of pet: ' + str(animal.getAge()))
